@@ -1,0 +1,60 @@
+<!-- product section -->
+<section class="product-section">
+    <div class="container">
+        <div class="back-link">
+            <a routerLink="/activity" routerLinkActive="active"> &lt;&lt; Back to Activity List</a>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="product-pic-zoom">
+                    <img class="product-big-img" src="{{imageUrl}}" alt="">
+                </div>
+                <div class="product-thumbs" tabindex="1" style="overflow: hidden; outline: none;">
+                    <div class="product-thumbs-track" *ngFor="let picID of picID">
+                        <div class="pt" data-imgbigurl="img/single-product/3.jpg"><img src="{{imageUrl}}" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 product-details">
+                <h2 class="p-title">{{name}}</h2>
+                <p>Date			: <span>{{date | date:"dd MMMM yyyy"}}</span><p>
+                <p>Venue		: <span>{{venue}}</span></p>
+                <p>Number Needed: <span>{{numberNeeded}}</span></p>
+                <a class="site-btn" (click)="addActivity()">i want to join</a>
+                <div id="accordion" class="accordion-area">
+
+                    <!-- Information Details -->
+                    <div class="panel">
+                        <div class="panel-header" id="headingOne">
+                            <button class="panel-link active" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">information</button>
+                        </div>
+                        <div id="collapse1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="panel-body">
+                                <p>{{info}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Organiser Details -->
+                    <div class="panel">
+                        <div class="panel-header" id="headingTwo">
+                            <button class="panel-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">Organiser Details </button>
+                        </div>
+                        <div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="panel-body">
+                                <p>Name : <span>{{userName}}</span></p>
+                                <p>Email : <a href="mailto:{{userEmail}}"> {{userEmail}}</a></p>
+                                
+                                <p><span>Biography:</span><br>
+                                {{userBio}}
+                                </p>
+                                <a href="#" class="site-btn">Chat with Me</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- product section end -->

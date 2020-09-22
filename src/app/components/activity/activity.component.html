@@ -1,0 +1,59 @@
+<!-- Page info -->
+<div class="page-top-info">
+    <div class="container">
+        <h4>Activity List</h4>
+        <div class="site-pagination">
+            <a routerLink="" routerLinkActive="active">Home</a> /
+        </div>
+    </div>
+</div>
+<!-- Page info end -->
+
+
+<!-- Category section -->
+<section class="category-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 order-2 order-lg-1">
+                <div class="filter-widget">
+                    <h2 class="fw-title">Categories</h2>
+                    <ul class="category-menu">
+                        <li><a href="#">Arts & Culture</a></li>
+                        <li><a href="#">Flora & Fauna</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Education & Literacy</a></li>
+                        <li><a href="#">Others</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            
+                <div class="col-lg-9  order-1 order-lg-2 mb-5 mb-lg-0">
+
+                    <div class="row">
+                        <ng-template [ngIf]="events?.length > 0">
+                        <div class="col-lg-4 col-sm-6" *ngFor="let event of events">
+                            <div class="product-item" >
+                                <div class="pi-pic">
+                                    <img src='{{event.imageUrl}}' alt="">
+                                    <div class="pi-links">
+                                        <a (click)="onSelect(event)" class="add-card"><i class="flaticon-info"></i><span>MORE INFO</span></a>
+                                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+                                    </div>
+                                </div>
+                                <div class="pi-text">
+                                    <p>{{event.name}}</p>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </ng-template>
+                    
+                    </div>
+                
+                </div>
+
+        </div>
+    </div>
+</section>
+<!-- Category section end -->

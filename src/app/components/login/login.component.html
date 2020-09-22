@@ -1,0 +1,43 @@
+<div class="page-wrapper bg-gra-01 p-t-200 p-b-200 font-poppins">
+    <div class="wrapper wrapper--w780">
+        <div class="card card-3">
+            <div class="card-heading"></div>
+            <div class="card-body">
+                <h2 class="title">Login Info</h2>
+                <form class="example-class">
+                    <div class="input-group">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Email" [formControl]="emailFormControl">
+                            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                              Please enter a valid email address
+                            </mat-error>
+                            <mat-error *ngIf="emailFormControl.hasError('required')">
+                              Email is <strong>required</strong>
+                            </mat-error>
+                          </mat-form-field>
+                    </div>
+                    <div class="input-group">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Password" type="password" [formControl]="passwordFormControl">
+                            <mat-error *ngIf="passwordFormControl.hasError('minlength') && !passwordFormControl.hasError('required')">
+                              Password must be minimum 6 characters.
+                            </mat-error>
+                            <mat-error *ngIf="passwordFormControl.hasError('required')">
+                              Password is <strong>required</strong>
+                            </mat-error>
+                          </mat-form-field>
+                    </div>
+                        <div class="p-t-10" >
+                            <button mat-raised-button class="btn btn--pill btn--green" type="submit" (click)="login()">Login</button>
+                        </div>
+                    
+                </form>
+                    <div class="center">
+                        <h6>Doesn't have an account?
+                            <a routerLink="/register" routerLinkActive="active">Register here</a>
+                        </h6>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

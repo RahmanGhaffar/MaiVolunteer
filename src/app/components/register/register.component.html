@@ -1,0 +1,72 @@
+
+
+<div class="page-wrapper bg-gra-01 p-t-50 p-b-50 font-poppins">
+    <div class="wrapper wrapper--w780">
+        <div class="card card-3">
+            <div class="card-heading"></div>
+            <div class="card-body">
+                <h2 class="title">Registration Info</h2>
+                <form method="POST">
+                    <div class="input-group">
+                        <input class="input--style-3" type="text" placeholder="Name" name="name" #name>
+                    </div>
+                    <div class="input-List">
+                        <div class="rs-select2 js-select-simple select--no-search">
+                            <select name="gender" #gender>
+                                <option disabled="disabled" selected="selected">Gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                            <div class="select-dropdown"></div>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <input class="input--style-3" type="email" placeholder="Email" name="email" #email>
+                    </div>
+                    <div class="input-group">
+                        <input class="input--style-3" type="password" placeholder="Password" name="password" #password>
+                    </div>
+                    <div class="input-group">
+                        <input class="input--style-3" type="password" placeholder="Retype Password" name="re-password" #repassword>
+                    </div>
+                    <div class="input-group">
+                        <input class="input--style-3" type="text" placeholder="Phone" name="phone" #phone>
+                    </div>
+                    <div class="input-list">
+                        <div class="rs-select2 js-select-simple select--no-search">
+                            <select name="type" #type formControlName="userType">
+                                <option disabled="disabled" selected="selected">Are you?</option>
+                                <option value="Organiser">Organiser</option>
+                                <option value="Volunteer">Volunteer</option>
+                            </select>
+                            <div class="select-dropdown"></div>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <input class="input--style-3" type="text" placeholder="Address" name="address" #address>
+                    </div>
+
+                        <div class="p-t-10 center">
+                            <button class="btn btn--pill btn--green" type="submit" (click)="signupUser(name, gender, email, password, repassword, phone, type)">Join The Community</button>
+                        </div>
+
+                    
+                </form>
+                    <h6>Already have an account?
+                        <a routerLink="/login" routerLinkActive="active">Login</a>
+                    </h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+	<!-- Register -->
+	<!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="js/global.js"></script>

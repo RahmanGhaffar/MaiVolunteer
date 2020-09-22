@@ -1,0 +1,65 @@
+<div class="container" style="padding-top: 20px; padding-bottom: 20px;">
+    <h2>Add New Activity</h2>
+    <!--  -->
+    <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+    <div class="container">
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                 
+                    <div class="text-center">
+                      <img [src]="imgSrc" width="350px" height="250px" (click)="fileUploader.click()">
+                    </div>
+                    <div class="form-group">
+                      <label>Select file to upload</label>
+                      <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="imageUrl"
+                        (change)="showPreview($event)">
+                      <div class="text-danger" *ngIf="isSubmitted && formControls.imageUrl.errors?.required">This field is required.
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <button type="submit" class="btn btn-success btn-block float-right" (click)="save()">Create New</button>
+                      </div>
+                    </div>
+                  
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label>Activity Name</label>
+                <input class="form-control" formControlName="name" placeholder="Caption">
+                <div class="text-danger" *ngIf="isSubmitted && formControls.name.errors?.required">This field is required.
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Activity Date</label>
+                <input class="form-control" formControlName="activitydate" type="date">
+            </div>
+            <div class="form-group">
+                <label>Activity Venue</label>
+                <input class="form-control" formControlName="venue" placeholder="Location">
+                <div class="text-danger" *ngIf="isSubmitted && formControls.venue.errors?.required">This field is required.
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Number Needed</label>
+                <input class="form-control" formControlName="numberNeeded" placeholder="numberNeeded" type="number">
+                <div class="text-danger" *ngIf="isSubmitted && formControls.numberNeeded.errors?.required">This field is required.
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label>Activity Information</label>
+                <textarea class="form-control" formControlName="information" rows="15" id="comment" placeholder="Insert yout information here"></textarea>
+                <div class="text-danger" *ngIf="isSubmitted && formControls.info.errors?.required">This field is required.
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</form>
+</div>

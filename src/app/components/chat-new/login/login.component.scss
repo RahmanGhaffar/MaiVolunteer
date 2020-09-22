@@ -1,0 +1,28 @@
+.example-container {
+    width: auto;
+    height:600px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }
+
+  .background{
+    background: linear-gradient(to right, #00a86b ,  #7f00ff);
+    box-shadow: 1px 1px 1px 1px #000000;
+  }
+
+  .row{
+    background-color: white;
+  }
+  .logo{
+    background: url("./logo.png")
+  }

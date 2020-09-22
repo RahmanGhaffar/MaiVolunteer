@@ -1,0 +1,104 @@
+<div class="container">
+	<div class="row">
+      
+      <!-- edit form column -->
+      <div class="col-md-10 col-md-offset-1 personal-info">
+        <h3>User info</h3>
+        
+        <!-- Tabs -->
+        <div class="container">
+            <ul class="nav nav-tabs">
+              <li class="active">
+                  <a data-toggle="tab" href="#home">Profile</a></li>
+              <li><a data-toggle="tab" href="#menu2" (click)="showActivity()">Activity</a></li>
+              <li><a data-toggle="tab" (click)="toChat()">Chat</a></li>
+            </ul>
+          
+            <div class="tab-content">
+              <div id="home" class="tab-pane fade in active">
+                <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            
+                            <label for="user_name"><h4>User name</h4></label>
+                              <input formControlName="name" type="text" class="form-control" name="user_name" id="user_name" placeholder="User name" title="enter your user name if any." value="{{this.name}}">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="phone"><h4>Phone Number</h4></label>
+                              <input formControlName="phone" type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any." value="{{ this.phone }}">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="type"><h4>Type</h4></label><br>
+                              <select name="type" #type formControlName="type" class="form-control" value="{{ this.type }}">
+                                <option disabled="disabled" selected="selected" value="">Are you?</option>
+                                <option value="Organiser">Organiser</option>
+                                <option value="Volunteer">Volunteer</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Email</h4></label>
+                              <input formControlName="email" type="email" class="form-control" id="email" placeholder="Your Email" title="enter an Email" value="{{ this.email }}">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="password"><h4>Password</h4></label>
+                              <input  type="password" class="form-control" formControlName="password" name="password" id="password" placeholder="password" title="enter your password." value="{{ this.password }}">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="password2"><h4>Verify</h4></label>
+                              <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2." value="{{ this.password }}">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-xs-12">
+                            <br>
+                            <label for="biography"><h4>Biography</h4></label>
+                            <input formControlName="biography" type="text" class="form-control" name="biography" id="biography" placeholder="Biography" title="enter your biography if any." value="{{ this.biography }}">
+                            </div>
+                      </div>
+
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br>
+                                  <button class="btn btn-lg btn-success" type="submit"  ><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                            </div>
+                      </div>
+                  </form>
+              </div>
+              <div id="menu2" class="tab-pane fade">
+                <div class="table">
+                    <div class="form-group">
+                      <div class="col-xs-12" style="padding: 5px 5px 5px 5px;">
+                           <br>
+                           <button class="btn btn-lg btn-success"><i class="glyphicon glyphicon-plus"></i><a  routerLink="/addActivity" routerLinkActive="active" style="color: white;"> Add Activity</a></button>
+                       </div>
+                    </div>
+                      <li *ngFor="let Activity of activity" >
+                        <a (click)="onSelect(Activity)">{{Activity.name}}</a>
+                      </li>
+                   </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+<hr>
+

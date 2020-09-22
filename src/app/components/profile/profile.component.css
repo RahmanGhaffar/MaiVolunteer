@@ -1,0 +1,30 @@
+.table{
+    padding: 10px 10px 10px 10px;
+  }
+
+
+    #volunteer {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  padding: 10px 10px 10px 10px;
+}
+
+#volunteer td, #volunteer th {
+  border: 1px solid rgb(158, 158, 158);
+  padding: 8px;
+}
+
+#volunteer tr:hover {background-color:#bce1f9;}
+
+#volunteer th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:#5cb85c;
+  color: white;
+}
+
+.personal-info{
+  margin-top: 30px;
+}
